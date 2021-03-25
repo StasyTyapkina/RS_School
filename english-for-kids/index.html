@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>English for kids</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="menu">
+                <input id="menu__toggle" type="checkbox"/>
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                <ul class="list"></ul>
+            </nav>
+            <h1> English for kids </h1>
+            
+            <div class="switch" id="switcher">
+                <input type="checkbox" name="switch" class="switch-checkbox" id="myswitch" tabindex="0" checked>
+                <label class="switch-label" for="myswitch">
+                    <span class="switch-inner"></span>
+                    <span class="switch-switch"></span>
+                </label>
+            </div>
+            
+            <button class="button" style="visibility: hidden;"> Start game</button>
+        </div>
+        <div class="results"></div>
+    </header>
+    
+
+    <script src="./app/bundle.js" type="module"></script>
+     <!-- <script src="index.js" type="module"></script>  --> 
+    
+</body>
+</html>

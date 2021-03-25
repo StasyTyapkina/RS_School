@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button, 
+button:active, 
+button:focus,
+input,
+audio {
+  outline: none;
+}
+  
+body{
+  font-family: 'Noto Serif', serif;
+  background: url("images/image.jpg") center no-repeat;
+  background-size:cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.field{
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  position: relative;  
+  
+  box-sizing: border-box;   
+}
+
+.cell{
+  width: 100px;
+  height: 100px;
+  border: 2px solid #072e38;
+  background-color: rgba(119, 224, 159, 0.5);
+  position: absolute;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.cell:hover{
+  background-color: rgba(30, 73, 46, 0.5);
+}
+
+#fieldSize{
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: rgba(119, 224, 159, 0.5);
+}
+
+.info_field,
+.moves{
+  font-size: 25px; 
+  font-weight: 400;
+  padding-top: 20px;
+}
+
+.info_field{
+  position: relative;
+  margin-left: 40px;
+}
+
+#generateField,
+.buttonSound{
+  background: #39c9ec;
+  margin: 20px 0;
+  width: 120px;
+  border-radius: 50px;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  cursor: pointer;
+  border:solid 2px #072e38;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonSound{
+  width: 100px;
+  position: relative;
+  margin: -72px 87px 20px 150px;
+}
+
+#generateField:hover,
+.buttonSound:hover{
+  background: #072e38;
+  color: #fff;
+}
+
+.buttonSound--activatable::after {
+  content: '';
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.buttonSound--active::after {
+  background: #f0ec0b;
+}
+
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel, ::-webkit-media-controls-enclosure {
+  background: #39c9ec;
+  border:solid 2px #072e38;
+}
+
+
+.timer{
+  font-size: 20px;
+}
+
+.counter{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+
+ 
+@media (max-width: 860px){
+  body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info_field{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  label{
+    padding: 0 20px;
+  }
+  input{
+    margin: 10px;
+  }
+
+  #generateField, 
+  .buttonSound{
+    margin: 10px;
+  }
+  #timer,
+  .counter{
+    padding: 10px;
+  }
+}
+  

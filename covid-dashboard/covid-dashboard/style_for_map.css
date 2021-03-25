@@ -1,0 +1,173 @@
+/* reset styles */
+*,
+*:after,
+*:before { box-sizing: border-box; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+    border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+
+/* end reset styles */
+
+body{
+    background-color: rgb(52, 53, 53);
+    color: rgb(250, 253, 253);
+    text-align: center;
+}
+
+/* header */
+header{
+    width: 100%;
+    height: 5vh;
+    line-height: 5vh;
+    font-size: 2rem;
+    font-weight: 800;
+}
+.logo{
+    height: 80%;
+}
+
+/* main */
+main{
+    width: 100vw;
+    height: 95vh;
+    display: grid;
+    grid-template: repeat(5, 19vh) / 2fr 6fr 3fr;
+    background-color: rgb(138, 141, 140);
+}
+.headers{
+    white-space: pre-line;
+    font-size: 1.2rem;
+    margin-bottom: .2rem;
+}
+.cases{
+    padding: .2rem;
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
+    overflow-y: auto;
+}
+.today{
+    font-weight: 700;
+    padding: .2rem 2rem;
+    margin: .2rem 0;
+    outline: none;
+    border: 2px solid;
+    border-radius: 3px;
+    background: rgba(255,255,255,.2);
+    color: rgb(250, 253, 253);
+    transition: 0.5s;
+}
+.today:hover{
+    background:rgb(250, 253, 253);
+    color:  rgba(52, 53, 53);
+    cursor: pointer;
+}
+.line{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    border-bottom: 1px solid  rgb(250, 253, 253);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.count{
+    padding: .1rem;
+    color: rgb(230, 0, 0);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Global Cases */
+.globalCases{
+    grid-area: 1 / 1 / auto / 2;
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
+    display: grid;
+    grid-template: 2 / 1;
+}
+#globalCases{
+    color: rgb(230, 0, 0);
+    font-size: 3rem;
+    font-weight: 700;
+}
+#newGlobalCases{
+    color: rgb(233, 161, 161);
+    font-size: 1.2rem;
+}
+
+/* Cases by Country/Region/Sovereignty */
+.casesByCountry{
+    grid-area: 2 / 1 / span 4 / 2;
+}
+
+/* Map */
+.map{
+    grid-area: 1 / 2 / span 5 / 3;
+}
+
+.mapboxgl-popup {
+    color: rgb(0, 0, 0);
+}
+     
+h2 {
+    font-size: 1.5em;
+    line-height: 1.2;
+    margin-bottom: .1em;
+    margin-top: 0;
+}
+
+
+/* Deaths/Recovered */
+.deathsRecovered{
+    grid-area: 1 / 3 / 4 / 4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.hide{
+    display: none;
+}
+
+/* Global Deaths */
+.globalDeaths #globalDeaths{
+    font-size: 2rem;
+    color: coral;
+}
+#newDeaths{
+    color: coral;
+}
+
+/* Global Recovered */
+.globalRecovered #globalRecovered{
+    font-size: 2rem;
+    color: rgb(127, 255, 0);
+}
+#newRecovered{
+    color: rgb(127, 255, 0);
+}
+
+/* Stats by Country */
+.statsByCountry{
+}
+
+/* Diagramm */
+.diagramm{
+    grid-area: 4 / 3 / 6 / 4;
+}

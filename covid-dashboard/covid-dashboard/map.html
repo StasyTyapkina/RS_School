@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Dashboard</title>
+    <link rel="shortcut icon" href="./assets/img/covid-icon.png" type="image/x-icon">
+    <link href="style_for_map.css" rel='stylesheet'>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+    <header>
+        <img src="./assets/img/covid-icon.png" alt="covid-icon" class="logo">
+        COVID-19 Dashboard
+    </header>
+    <main>
+        <div class="globalCases cases">
+            <span class="headers">Global Cases</span>
+            <div id="globalCases">date here</div>
+            <div id="newGlobalCases">date here</div>
+        </div>
+
+        <div class="casesByCountry cases">
+            <span class="headers">Cases by 
+                Country/Region/Sovereignty
+            </span>
+            <button class="today" id="todayGlobal">today</button>
+            <div id="casesByCountry"></div>
+        </div>
+
+        <div class="map" id="map"></div>
+
+        <div class="deathsRecovered cases">
+            <div class="globalDeaths">
+                <span class="headers">Global Deaths</span>
+                <div id="globalDeaths">1665211</div>
+                <div id="newDeaths">date here</div>
+                <button class="today global-deaths-recovered">today</button>
+                <div id="dethsCasesByCountry">date here</div>
+            </div>
+            <div class="globalRecovered hide">
+                <span class="headers">Global Recovered</span>
+                <div id="globalRecovered">date here</div>
+                <div id="newRecovered">date here</div>
+                <button class="today global-deaths-recovered">today</button>
+                <div id="recoveredCasesByCountry">date here</div>
+            </div>
+
+            <div class="statsByCountry">
+                <span class="headers">Stats By Country</span>
+                <button class="today">today</button>
+                <div id="statsByCountry">date here</div>
+            </div>
+        </div>
+        <div class="diagramm cases">diagramm here</div>
+    </main>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <script src="./map.js" type="module"></script>
+    <script src="./globalCases.js" type="module"></script>
+    <script src="./casesByCountry.js" type="module"></script>
+
+</body>
+
+</html>

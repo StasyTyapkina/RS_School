@@ -1,0 +1,536 @@
+/* reset styles */
+
+*,
+*:after,
+*:before { box-sizing: border-box; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+
+/* end reset styles */
+:root{
+  font-size: 0.625em; 
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+ 
+  
+  --color-dark: #292929;
+  --color-dark-light: #c4bebe;
+  --color-blue: #6cc3d5;
+  --color-light: #FFFFFF;
+  --color-yellow: #ffce67;
+  --color-pink: #e47b80;;
+  --color-pink-light: #f9c8ca;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+body{
+  min-width: 1280px;
+  margin: 0 auto;
+  background: url(img/main.jpg) no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1280px) {
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menu{
+    margin-left: 13rem;
+    margin-right: 10rem;
+  }
+  
+}
+
+
+h1{
+  font-size: 10rem;
+  line-height: 110%;
+  align-items: center;
+  letter-spacing: 0.12rem;
+  color: var(--color-pink);
+  text-shadow: 0.07rem 0 var(--color-light);
+  padding-bottom: 1rem;  
+  margin-right: 10rem;
+
+}
+
+.button{
+  background: var(--color-pink-light);
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--color-dark);
+  cursor: pointer;
+  width: 14rem;
+  height: 4rem;
+  margin: 2rem 0rem 0rem 0rem;
+}
+
+.button:hover{
+  background: var(--color-pink);
+  color: var(--color-light);
+}
+
+.results{
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 4rem;
+}
+
+.winStar {
+  width: 4rem;
+  min-width: 4rem;
+  height: 4rem;
+  background-image: url(img/star-win.svg);
+  background-repeat: no-repeat;
+  background-size: 4rem 4rem;
+}
+
+.loseStar {
+  width: 4rem;
+  min-width: 4rem;
+  height: 4rem;
+  background-image: url(img/star.svg);
+  background-repeat: no-repeat;
+  background-size: 4rem 4rem;
+}
+
+.game_over {
+  width: 80%;
+  position: absolute;
+  top: 28%;
+  left: 10%;
+}
+
+.congrat{
+    font-size: 6rem;
+    position: absolute;
+    top: 26%;
+    left: 10%;
+    text-align: center;
+}
+
+/* Theme container*/
+
+.figure_content{
+  background: linear-gradient(to top, var(--color-light), var(--color-blue));
+  border-radius: 0.5rem;
+  width: 30rem;
+  height: 30rem;
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.figcaption_title{
+  color: var(--color-dark);
+  font-size: 3rem;
+}
+
+.img_content{
+  width: 20rem;
+  height: 20rem;
+  border: solid 1rem white;
+  border-radius: 100%;
+}
+
+/*card with words container*/
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    text-align: center;
+    width: 30rem;
+    height: 25rem;
+    border-radius: 0.5rem;
+    margin: 2rem 2.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.4);
+    transition: box-shadow .25s linear,transform .7s,-webkit-transform .7s;
+    background-color: var(--color-light);
+}
+
+
+.flip {   
+    transform: rotateY(180deg);
+    transition: 1s;
+  }
+  
+.card_title{
+  color: var(--color-dark);
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+.img_word_content{
+  width: 30rem;
+  height: 20rem;
+}
+
+.back_side, .front_side {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: .5s;
+}
+
+.back_side, .front_side, .rotate {
+  backface-visibility: hidden;
+}
+
+.back_side {
+  transform: rotateY(180deg);
+}
+
+.rotate {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: url("https://www.pngarts.com/files/7/Update-Button-PNG-Image.png");
+  background-size: 3.2rem;
+  background-repeat: no-repeat;
+  bottom: 0;
+  right: 0;
+  transition: .3s;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+
+.rotate:hover{
+  filter: grayscale(.8); 
+}
+
+/*hamburger menu*/
+    
+input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.menu__btn {
+  display: flex; 
+  align-items: center;  
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  z-index: 100;
+  top: 0rem;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0.3rem;
+  background-color: var(--color-pink);
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -1rem;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 1rem;
+}
+
+.list {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 32rem;
+  height: 100vh;
+  margin: 0;
+  padding: 15rem 0;
+  text-align: center;
+  background-color: var(--color-blue);
+  z-index: 10; 
+}
+
+.list__link {
+  display: block;
+  padding: 1.2rem 2.4rem;
+  color: var(--color-light);
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+.list__link:hover {
+  color: var(--color-pink-light);
+}
+
+.link_active{
+  color: var(--color-pink);
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  
+  transform: rotate(180deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  
+  transform: rotate(180deg);
+}
+#menu__toggle:checked ~ .list {
+  visibility: visible;
+  left: 0;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+transition-duration: .25s;
+}
+.list {
+transition-duration: .25s;
+}
+.list__link {
+transition-duration: .25s;
+} 
+
+/*switch toggle from https://proto.io/ */
+
+.switch {
+  position: relative;
+  width: 11rem;
+  margin-right: 10rem;
+}
+
+.switch-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.switch-label {
+  display: block; 
+  overflow: hidden; 
+  cursor: pointer;
+  border: 2px solid var(--color-dark-light); 
+  border-radius: 1.5rem;
+}
+
+.switch-inner {
+  display: block; 
+  width: 200%; 
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.switch-inner:before, 
+.switch-inner:after {
+  display: block;
+  float: left; 
+  width: 50%;
+  height: 4rem;
+  padding: 0; 
+  line-height: 4rem;
+  font-size: 1.5rem;
+}
+
+.switch-inner:before {
+  content: "Train";
+  padding-left: 1rem;
+  background-color: var(--color-pink-light); 
+  color: var(--color-dark);
+}
+
+.switch-inner:after {
+  content: "Play";
+  padding-right: 1rem;
+  background-color: var(--color-blue); 
+  color: var(--color-dark);
+  text-align: right;
+}
+
+.switch-switch {
+  display: block; 
+  width: 2rem; 
+  margin: 1rem;
+  background: var(--color-yellow);
+  position: absolute; 
+  top: 0; 
+  bottom: 0;
+  right: 62px;
+  border: 2px solid var(--color-dark-light); 
+  border-radius: 1.5rem;
+  transition: all 0.3s ease-in 0s; 
+}
+
+.switch-checkbox:checked + .switch-label .switch-inner {
+  margin-left: 0;
+}
+
+.switch-checkbox:checked + .switch-label .switch-switch {
+  right: 0px; 
+  background-color: var(--color-light); 
+}
+
+
+/*media*/
+
+  @media (min-width: 768px) and (max-width: 1279px){
+    body{
+      min-width: 768px;
+    }
+    
+    .container{
+      width: 708px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .menu{
+      margin-right: 11rem;
+    }
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    .switch{
+      margin-top: 2rem;
+      margin-left: 24rem;
+    }
+
+    /* Theme container*/
+
+    .figure_content{
+      width: 21rem;
+      height: 21rem;
+      margin: 4rem 1rem;
+    }
+
+    .figcaption_title{
+      font-size: 2.5rem;
+    }
+
+    .img_content{
+      width: 15rem;
+      height: 15rem;
+      border: solid 0.5rem white;
+    }
+  }
+  
+  
+  @media (min-width: 320px) and (max-width: 767px){
+    body{
+      min-width: 320px;
+    }
+    
+    .container{
+      width: 300px;
+      margin: 4rem auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    h1{
+      display: none;
+    }
+
+    .main{
+      margin-top: -5rem;
+    }    
+    
+    .switch{
+      margin-top: 2rem;
+      margin-left: 4rem;
+    }
+
+    /* Theme container*/
+
+    .figure_content{
+      width: 13rem;
+      height: 15rem;
+      margin: 4rem 1rem;
+    }
+
+    .figcaption_title{
+      font-size: 2rem;
+    }
+
+    .img_content{
+      width: 10rem;
+      height: 10rem;
+      border: solid 0.3rem white;
+    }
+
+    /*word card*/
+
+    .card {
+      width: 25rem;
+      height: 23rem;
+      border-radius: 0.5rem;
+      margin: 2rem 2.5rem;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,.4);
+      transition: box-shadow .25s linear,transform .7s,-webkit-transform .7s;
+    }
+
+    .img_word_content {
+      width: 25rem;
+      height: 17rem;
+    }
+
+    /*switcher*/
+
+    .switch {
+      margin-left: 10rem;
+    }
+
+    /*hamburger menu*/
+    
+    .list {
+      display: block;
+      position: absolute;
+      visibility: hidden;
+      top: 0;
+      left: -100%;
+      width: 25rem;
+      height: 100rem;
+      padding: 9rem 0;
+    }
+  }

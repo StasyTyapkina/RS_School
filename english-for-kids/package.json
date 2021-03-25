@@ -1,0 +1,33 @@
+{
+  "name": "english-for-kids",
+  "version": "1.0.0",
+  "author": "Anastasiya Tyapkina <stasya.tyapkina@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rolling-scopes-school/stasytyapkina-JS2020Q3/tree/english-for-kids"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.15.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "main": "",
+  "dependencies": {},
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "dev": "./node_modules/.bin/webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/9fa8ad2c91.js" crossorigin="anonymous"></script>
+    <title>RS Clone</title>
+</head>
+<body>
+  <header>
+    <h1>Tetris</h1>
+  </header>
+  <main>
+    <div class="game_field">
+      <div class="left_column">
+        <h3>Top 3 results:</h3>
+        <ol class="best_result"></ol>
+      </div>
+      <img class="img" src="./src/img/bender2.png">
+        <canvas id="canvas" class="game_board"></canvas>
+        <div class="right_column">
+          <div class="modal_container help_container"> 
+            <div class="modal_content">
+              <div class="modal_header">
+                <i class="far fa-window-close close_bttn help_container_close_bttn"></i>
+                <h2 class="welcome_inner">Welcome to TETRIS!</h2>
+              </div>
+              <div class="modal_main">
+                <h3>Hello dear players!</h3>
+                <p>To control the tetromino you can use the keyboard: <br>
+                  🠉 flip the figure <br>
+                🠈 🠊 movement left / right <br>
+                  🠋 acceleration of falling tetromino<br>
+                Esc - pause <br>
+                or use the control buttons on the screen. 
+                </p>
+              </div>
+              <div class="modal_footer">
+                <video controls class="video">
+                  <source src="./src/video/t_video.mp4" type="video/mp4">     
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="game_info">      
+            <canvas  id="mini_canvas" class="next_tetro"></canvas>            
+            <p><b>Score:</b> <span id="score">0</span></p>
+            <p><b>Time:</b> <span id="timer">00:00:00</span></p>        
+            <p><b>Level:</b> <span id="level">0</span></p>   
+            <p><b>Lines to level up:</b> <span id="lines">10</span></p>            
+          </div>
+          <button class="play_button bttn">Play</button> 
+          <button class="pause_button bttn">Pause</button>
+          <button class="restart_button bttn">Restart</button>          
+          <div class="game_control">
+            <button class="up"><i class="fas fa-arrow-alt-circle-up"></i></button>
+            <button class="middle left"><i class="fas fa-arrow-alt-circle-left"></i></button>
+            <button class="middle right"><i class="fas fa-arrow-alt-circle-right"></i></button>
+            <button class="down"><i class="fas fa-arrow-alt-circle-down down" ></i></button>           
+          </div>
+          <button class="setup_button bttn">Setup</button>
+          <button class="help_bttn" title="How to play"><i class="far fa-question-circle"></i></button>
+          <button class="sound_bttn"><i class="fas fa-volume-off"></i></button>
+          <div class="modal_container setup_container"> 
+            <div class="modal_content">
+              <div class="modal_header">
+                <i class="far fa-window-close close_bttn setup_container_close_bttn"></i>
+                <h2 class="setup_inner">Game settings</h2>
+              </div>
+              <div class="modal_main">
+                <div class="lang_changer">
+                  <label for="lang" class="lang_label">Language</label>
+                  <select class="language" id="lang">
+                      <option value="en" selected="">English</option>
+                  </select>
+                </div>
+                <div class="music_control">
+                  <i class="fas fa-music" title="Music volume"></i>
+                  <input title="Music volume" type="range" min="0" max="1" step="0.05" value="0.4" class="music_control_slider">
+                  <span class="music_value">40%</span>
+                </div>
+                <div class="sound_сontrol">                
+                  <i class="fas fa-volume-up" title="Sound volume"></i>
+                  <input title="Sound volume" type="range" min="0" max="1" step="0.05" value="0.4" class="sound_control_slider">
+                  <span class="sounds_value">40%</span>
+                </div>
+              </div>
+              <div class="modal_footer">
+                <button class="save_button bttn">Save settings</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <footer class="footer">
+    <div class="links">      
+        <a href="https://rs.school/index.html" target="_blank" class="link" >
+            <img src="./src/img/rs_school_logo.svg" alt="rs_logo" class="rs_logo">
+        </a>
+        <a href="https://github.com/StasyTyapkina/RSclone/pull/1" target="_blank" class="link">
+            <img src="./src/img/GitHub.png" alt="github_logo" class="github_logo">
+        </a>
+    </div>
+    <p class="copyright">Created by <a href="https://github.com/StasyTyapkina/RSclone/pull/1" target="_blank">A.Tyapkina</a> 2021</p>
+  </footer>
+  
+  <script src="app/bundle.js"></script>    
+   
+</body>
+</html>
